@@ -36,8 +36,6 @@
     {{#if_eq lintConfig "airbnb"}}
     "eslint-config-airbnb-base": "^14.0.0",
     {{/if_eq}}
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-import-resolver-webpack": "^0.13.0",
     {{#if_eq lintConfig "prettier"}}
     "eslint-config-prettier": "^8.1.0",
     {{/if_eq}}
@@ -50,6 +48,8 @@
     "@types/node": "^10.17.15",
     {{/preset.typescript}}
     "@quasar/app": "^3.0.0-beta.1"
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-import-resolver-webpack": "^0.13.0",
   },
   "browserslist": [
     "last 10 Chrome versions",

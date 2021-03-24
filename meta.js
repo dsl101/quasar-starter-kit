@@ -32,7 +32,7 @@ module.exports = {
     css: {
       type: 'list',
       message: 'Pick your CSS preprocessor:',
-      default: 'scss',
+      default: 'sass',
       choices: [
         {
           name: 'Sass with SCSS syntax',
@@ -59,7 +59,7 @@ module.exports = {
         {
           name: 'ESLint (recommended)',
           value: 'lint',
-          checked: true
+          // checked: true
         },
         {
           name: 'TypeScript',
@@ -153,9 +153,9 @@ module.exports = {
   },
 
   filters: {
-    // ESlint files
-    '.eslintignore': 'preset.lint',
-    '.eslintrc.js': 'preset.lint',
+    // Always include ESlint files (i.e. don't filter)
+    // '.eslintignore': 'preset.lint',
+    // '.eslintrc.js': 'preset.lint',
 
     // Default files when not using TypeScript
     'jsconfig.json': '!preset.typescript',
