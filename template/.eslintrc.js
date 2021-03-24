@@ -47,7 +47,7 @@ module.exports = {
     }],
 
     'vue/no-parsing-error': ['error', {
-      // For {{ a < b ? 'thing1' : 'thing2' }}
+      // For valid JS inside moustaches
       // See https://github.com/vuejs/eslint-plugin-vue/issues/370
       "invalid-first-character-of-tag-name": false
     }],
