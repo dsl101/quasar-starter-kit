@@ -19,6 +19,8 @@ const ESLintPlugin = require('eslint-webpack-plugin')
 {{/if_eq}}
 {{/preset.lint}}
 const { configure } = require('quasar/wrappers');
+const fs = require('fs')
+const util = require('util')
 
 module.exports = configure(function (/* ctx */) {
   return {
@@ -95,6 +97,11 @@ module.exports = configure(function (/* ctx */) {
           .use(ESLintPlugin, [{ extensions: [ 'js', 'vue' ] }])
       },{{else}}chainWebpack (/* chain */) {
         //
+      },
+      extendWebpack (cfg) {
+        fs.writeFileSync('./webpack.config.js', `module.exports = {
+          resolve: ${util.inspect(cfg.resolve, { showHidden: false, compact: false, depth: null })}
+        }`)
       },{{/preset.lint}}{{/preset.typescript}}
     },
 
